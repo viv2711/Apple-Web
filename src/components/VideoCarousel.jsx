@@ -22,11 +22,11 @@ const VideoCarousel = () => {
   const { isEnd, startPlay, videoId, isLastVideo, isPlaying } = video;
 
   useGSAP(() => {
-    gsap.to('#slider', {
+    gsap.to("#slider", {
       transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
-      ease: 'power2.inOut'
-    })
+      ease: "power.inOut"
+    });
     gsap.to("#video", {
       scrollTrigger: {
         trigger: "#video",
@@ -95,8 +95,8 @@ const VideoCarousel = () => {
       }
       const animUpdate = () => {
         anim.progress(
-          videoRef.current[videoId].currentTime / 
-          highlightsSlides[videoId].videoDuration
+          videoRef.current[videoId].currentTime /
+            highlightsSlides[videoId].videoDuration
         );
       };
 
@@ -122,11 +122,11 @@ const VideoCarousel = () => {
       case "play":
         setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
         break;
-        case "pause":
-          setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
-          break;  
+      case "pause":
+        setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+        break;
       default:
-        return video;
+        break;
     }
   };
   return (
@@ -142,14 +142,15 @@ const VideoCarousel = () => {
                   playsInline={true}
                   muted
                   key={list.id}
-                  className={`${list.id === 2 && 'translate-x-44'} pointer-events-none` }
+                  className={`${
+                    list.id === 2 && "translate-x-44"
+                  } pointer-events-none`}
                   ref={(el) => (videoRef.current[i] = el)}
                   onEnded={() => {
-                    if(i !== 3){
-                      handleProcess('video-end', i)
-                    }
-                    else{
-                      handleProcess('video-last')
+                    if (i !== 3) {
+                      handleProcess("video-end", i);
+                    } else {
+                      handleProcess("video-last");
                     }
                   }}
                   onPlay={() => {
