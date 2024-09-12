@@ -22,7 +22,7 @@ function Footer() {
             Copyright @ 2024 Apple Inc. All rights are reserved.
           </p>
           <div className="flex">
-            {footerLinks.map((link,i) => (
+            {footerLinks.map((link, i) => (
               <p key={link} className="font-semibold text-gray text-xs">
                 {link}{" "}
                 {i !== footerLinks.length - 1 && (

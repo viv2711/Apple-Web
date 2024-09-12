@@ -134,7 +134,7 @@ function Model(props) {
         material={materials.pIJKfZsazmcpEiU}
         scale={0.01}
       >
-        <meshStandardMaterial roughness={1} map={texture}/>
+        <meshStandardMaterial roughness={1} map={texture} />
       </mesh>
       <mesh
         castShadow

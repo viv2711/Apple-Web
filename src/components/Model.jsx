@@ -25,19 +25,19 @@ const Model = () => {
 
   const tl = gsap.timeline();
   useEffect(() => {
-    if(size === 'large'){
-      animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
-        transform: 'translateX(-100%)',
-        duration:1,
-      })
+    if (size === "large") {
+      animateWithGsapTimeline(tl, small, smallRotation, "#view1", "#view2", {
+        transform: "translateX(-100%)",
+        duration: 1
+      });
     }
-    if(size === 'small'){
-      animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
-        transform: 'translateX(0)',
-        duration:0.5,
-      })
+    if (size === "small") {
+      animateWithGsapTimeline(tl, large, largeRotation, "#view2", "#view1", {
+        transform: "translateX(0)",
+        duration: 0.5
+      });
     }
-  }, [size])
+  }, [size]);
   useGSAP(() => {
     gsap.to("#heading", {
       opacity: 1,
@@ -106,8 +106,9 @@ const Model = () => {
                     key={label}
                     className="size-btn"
                     style={{
-                      backgroundColor: size === value ? "white" : " transparent",
-                      color: size === value ? 'black' : 'white'
+                      backgroundColor:
+                        size === value ? "white" : " transparent",
+                      color: size === value ? "black" : "white"
                     }}
                     onClick={() => setSize(value)}
                   >
