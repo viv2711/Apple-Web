@@ -1,4 +1,4 @@
-import hero from '../../public/assets/images/hero.jpg';
+import hero from '../../public/assets/images/hero.jpeg';
 
 export const heroImg = hero;
 
